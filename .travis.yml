@@ -1,0 +1,15 @@
+language: node_js
+
+node_js:
+  - "10.15.3"
+
+script:
+  - rm -rf dist
+  - npm run webpack
+
+deploy:
+  provider: surge
+  project: ./dist/
+  domain: binarymaze.surge.sh
+
+  skip_cleanup: true
